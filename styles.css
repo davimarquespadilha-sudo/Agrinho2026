@@ -1,0 +1,452 @@
+﻿/*
+  Variáveis globais do tema.
+  Definem cores, raios e sombra para manter consistência visual e facilitar ajustes futuros.
+*/
+:root {
+  --fundo: #0f1117;
+  --superficie: #1a1f2b;
+  --primaria: #39ff14;
+  --primaria-forte: #7b4a12;
+  --secundaria: #f3ff33;
+  --texto: #f4f7ff;
+  --texto-suave: #a8b1c7;
+  --raio-xl: 32px;
+  --raio-lg: 24px;
+  --raio-md: 16px;
+  --sombra: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+  Estilo base da página:
+  remove margem padrão, aplica tipografia principal e cria fundo com gradiente radial.
+*/
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top right, #3c2a1b 0%, var(--fundo) 48%);
+  color: var(--texto);
+}
+
+/*
+  Área de destaque do topo (hero):
+  bloco com gradiente, cantos arredondados e sombra para dar foco ao título.
+*/
+.cabecalho-destaque {
+  margin: 16px;
+  padding: 22px;
+  border-radius: var(--raio-xl);
+  background: linear-gradient(145deg, var(--primaria), var(--primaria-forte));
+  color: #fff;
+  box-shadow: var(--sombra);
+}
+
+/* Barra de navegação horizontal com distribuição entre marca e menu. */
+.barra-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Marca principal do site no canto superior esquerdo. */
+.marca {
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+/* Menu desktop: itens em linha com espaçamento fixo. */
+.menu-principal {
+  display: flex;
+  list-style: none;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo visual dos links do menu. */
+.menu-principal a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 999px;
+  transition: background 0.3s ease;
+}
+
+/* Realce ao passar o mouse no menu. */
+.menu-principal a:hover {
+  background: rgba(57, 255, 20, 0.2);
+}
+
+/* Botão hambúrguer; fica oculto no desktop e visível no mobile via media query. */
+.botao-menu {
+  display: none;
+  border: 0;
+  background: rgba(57, 255, 20, 0.2);
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+/* Bloco textual principal da capa (etiqueta, título e descrição). */
+.conteudo-destaque {
+  margin-top: 40px;
+  max-width: 700px;
+}
+
+/* Selo visual curto usado para categorizar a seção. */
+.etiqueta {
+  display: inline-block;
+  background: rgba(57, 255, 20, 0.2);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Título principal com escala fluida para diferentes larguras de tela. */
+h1 {
+  margin: 14px 0;
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  line-height: 1.2;
+}
+
+/* Botão de chamada para ação com contraste alto e leve elevação no hover. */
+.botao-acao {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #0e1118;
+  background: var(--secundaria);
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 999px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.botao-acao:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Contêiner principal em grid para separar blocos com espaçamento uniforme. */
+main {
+  padding: 18px;
+  display: grid;
+  gap: 18px;
+}
+
+/*
+  Cartões/seções padrão do projeto:
+  mesma base visual para manter unidade entre os diferentes conteúdos.
+*/
+.secao-cartoes,
+.secao-destaque,
+.secao-galeria,
+.secao-perfil-aluno {
+  background: var(--superficie);
+  border-radius: var(--raio-xl);
+  padding: 24px;
+  box-shadow: var(--sombra);
+}
+
+/* Títulos de seção com tamanho adaptável. */
+h2 {
+  margin-top: 0;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+/* Grade de três colunas para cartões informativos no desktop. */
+.grade-cartoes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* Estilo individual de cada cartão de conteúdo. */
+.cartao {
+  background: #202636;
+  border-radius: var(--raio-lg);
+  padding: 18px;
+  border: 1px solid #313b55;
+}
+
+.cartao h3 {
+  margin-top: 0;
+  font-size: 1.06rem;
+}
+
+/* Padroniza cor secundária para textos de apoio e legendas. */
+.cartao p,
+.secao-destaque p,
+li,
+footer,
+.subtitulo-galeria,
+figcaption,
+.texto-agrinho {
+  color: var(--texto-suave);
+}
+
+/* Seção de destaque dividida em conteúdo (2 partes) e painel (1 parte). */
+.secao-destaque {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 2fr 1fr;
+}
+
+.secao-destaque ul {
+  padding-left: 18px;
+}
+
+/* Painel com números-chave do tema apresentado. */
+.painel-estatisticas {
+  background: #202636;
+  border-radius: var(--raio-lg);
+  padding: 18px;
+}
+
+/* Cada métrica do painel recebe bloco próprio com contraste interno. */
+.bloco-estatistica {
+  background: #131824;
+  border-radius: var(--raio-md);
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #313b55;
+}
+
+.bloco-estatistica span {
+  display: block;
+  font-size: 0.82rem;
+  color: #94a4c9;
+}
+
+/* Valor principal do contador numérico. */
+.contador {
+  color: var(--primaria-forte);
+  font-size: 1.5rem;
+}
+
+.subtitulo-galeria {
+  margin-top: -8px;
+}
+
+/*
+  Grid da galeria:
+  três colunas no desktop com altura mínima para evitar "saltos" no layout.
+*/
+.grade-galeria {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  min-height: 280px;
+}
+
+/* Card de imagem da galeria com hover para feedback visual. */
+.cartao-galeria {
+  margin: 0;
+  background: #202636;
+  border-radius: var(--raio-lg);
+  border: 1px solid #313b55;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cartao-galeria:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 26px rgba(0, 0, 0, 0.12);
+}
+
+/* Tratamento de imagem para ocupar o card sem distorcer proporção. */
+.cartao-galeria img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+figcaption {
+  padding: 12px 14px;
+  font-weight: 600;
+}
+
+/* Área de navegação da paginação da galeria (botões e números). */
+.paginacao {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.botao-pagina,
+.numero-pagina {
+  border: 1px solid #3b4666;
+  background: #1a1f2b;
+  color: #d6def3;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Estado desabilitado de botões sem navegação possível. */
+.botao-pagina:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.numeros-pagina {
+  display: flex;
+  gap: 8px;
+}
+
+/* Destaque da página ativa na paginação. */
+.numero-pagina.ativo {
+  background: linear-gradient(140deg, var(--primaria), var(--secundaria));
+  color: #0c1018;
+  border-color: transparent;
+}
+
+/* Layout da seção de perfil do aluno (foto + descrição). */
+.secao-perfil-aluno {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.foto-aluno-box {
+  background: #202636;
+  border: 1px solid #313b55;
+  border-radius: var(--raio-lg);
+  padding: 12px;
+}
+
+.foto-aluno-box img {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--raio-md);
+}
+
+/* Rodapé institucional do projeto. */
+footer {
+  margin: 0 18px 18px;
+  background: #1a1f2b;
+  padding: 16px;
+  border-radius: var(--raio-lg);
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+/* Botão circular fixo para retorno rápido ao início da página. */
+.botao-topo {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(140deg, var(--primaria), var(--secundaria));
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: var(--sombra);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* Classe ativada via JavaScript para exibir o botão topo. */
+.botao-topo.mostrar {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/*
+  Estado inicial das animações de entrada.
+  O JavaScript adiciona classe "mostrar" quando o item entra na tela.
+*/
+.revelar,
+.item-revelar {
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.revelar.mostrar,
+.item-revelar.mostrar {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/*
+  Breakpoint de tablet:
+  empilha grades em uma coluna para melhorar leitura e toque.
+*/
+@media (max-width: 900px) {
+  .grade-cartoes,
+  .secao-destaque,
+  .grade-galeria,
+  .secao-perfil-aluno {
+    grid-template-columns: 1fr;
+  }
+
+  .cartao-galeria img {
+    height: 260px;
+  }
+}
+
+/*
+  Breakpoint de celular:
+  ativa menu hambúrguer e transforma menu em painel flutuante vertical.
+*/
+@media (max-width: 700px) {
+  .botao-menu {
+    display: inline-grid;
+    place-items: center;
+  }
+
+  .menu-principal {
+    position: absolute;
+    top: 78px;
+    right: 20px;
+    background: #ffffff;
+    color: var(--texto);
+    padding: 14px;
+    border-radius: var(--raio-md);
+    box-shadow: var(--sombra);
+    flex-direction: column;
+    min-width: 190px;
+    display: none;
+  }
+
+  .menu-principal.aberto {
+    display: flex;
+  }
+
+  .menu-principal a {
+    color: var(--primaria-forte);
+    border-radius: 10px;
+  }
+
+  .cabecalho-destaque {
+    position: relative;
+  }
+}

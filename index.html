@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroDrones Brasil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!--
+    Cabeçalho principal da página inicial.
+    Reúne identidade do projeto, navegação e chamada de abertura do tema.
+    A classe "revelar" permite animação de entrada controlada pelo script.
+  -->
+  <header class="cabecalho-destaque revelar">
+    <nav class="barra-topo">
+      <div class="marca">AgroDrones Brasil</div>
+      <button id="botaoMenu" class="botao-menu" aria-label="Abrir menu">☰</button>
+      <ul id="menuPrincipal" class="menu-principal">
+        <li><a href="#uso">Uso no Agro</a></li>
+        <li><a href="#maior">Maior Drone</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="agrinho.html">Agrinho</a></li>
+      </ul>
+    </nav>
+
+    <!--
+      Conteúdo de destaque (hero):
+      apresenta assunto central e oferece botão de navegação para a primeira seção temática.
+    -->
+    <section class="conteudo-destaque">
+      <p class="etiqueta">Tecnologia no campo</p>
+      <h1>Drones agrícolas: precisão, economia e produtividade</h1>
+      <p>
+        O uso de drones no agro vem transformando a agricultura brasileira com aplicação inteligente,
+        mapeamento de lavouras e decisões rápidas baseadas em dados.
+      </p>
+      <a class="botao-acao" href="#uso">Explorar conteúdo</a>
+    </section>
+  </header>
+
+  <main>
+    <!--
+      Seção 1: usos práticos dos drones.
+      Estruturada em cartões para facilitar leitura por tópicos.
+    -->
+    <section id="uso" class="secao-cartoes revelar">
+      <h2>Como os drones são usados na agricultura</h2>
+      <div class="grade-cartoes">
+        <article class="cartao item-revelar">
+          <h3>Mapeamento aéreo</h3>
+          <p>Criação de mapas detalhados para analisar falhas de plantio, estresse hídrico e variação de solo.</p>
+        </article>
+        <article class="cartao item-revelar">
+          <h3>Pulverização de precisão</h3>
+          <p>Aplicação localizada de defensivos e fertilizantes, reduzindo desperdício e impacto ambiental.</p>
+        </article>
+        <article class="cartao item-revelar">
+          <h3>Monitoramento constante</h3>
+          <p>Vistorias rápidas em grandes áreas com imagens em alta resolução e resposta mais ágil.</p>
+        </article>
+      </div>
+    </section>
+
+    <!--
+      Seção 2: destaque sobre drones de grande porte.
+      Divide conteúdo textual e painel numérico (contadores animados via JavaScript).
+    -->
+    <section id="maior" class="secao-destaque revelar">
+      <div>
+        <p class="etiqueta">Destaque nacional</p>
+        <h2>O maior drone agrícola do Brasil</h2>
+        <p>
+          No Brasil, os maiores drones agrícolas estão na categoria de pulverização de grande porte,
+          com tanques de alta capacidade e estrutura robusta para operações profissionais.
+          Esses modelos são usados em grandes propriedades para cobrir áreas extensas em menos tempo.
+        </p>
+        <p>
+          Em geral, esses gigantes se destacam por:
+        </p>
+        <ul>
+          <li>Tanque de grande volume para reduzir paradas de reabastecimento</li>
+          <li>Faixa de aplicação larga e alta eficiência operacional</li>
+          <li>Sistemas inteligentes de rota, altitude e controle de dose</li>
+        </ul>
+      </div>
+      <aside class="painel-estatisticas item-revelar">
+        <h3>Painel rápido</h3>
+        <div class="bloco-estatistica">
+          <span>Capacidade de tanque</span>
+          <strong class="contador" data-target="70" data-suffix=" L">0 L</strong>
+        </div>
+        <div class="bloco-estatistica">
+          <span>Faixa de aplicação</span>
+          <strong class="contador" data-target="12" data-suffix=" m">0 m</strong>
+        </div>
+        <div class="bloco-estatistica">
+          <span>Cobertura por hora</span>
+          <strong class="contador" data-target="45" data-suffix=" ha">0 ha</strong>
+        </div>
+      </aside>
+    </section>
+
+    <!--
+      Seção 3: galeria dinâmica.
+      O conteúdo da grade e os botões de paginação são montados pelo script.js.
+    -->
+    <section id="galeria" class="secao-galeria revelar">
+      <h2>Galeria de drones agrícolas</h2>
+      <p class="subtitulo-galeria">Imagens ilustrativas de operações de monitoramento e pulverização no campo.</p>
+      <div id="gradeGaleria" class="grade-galeria"></div>
+      <div class="paginacao">
+        <button id="botaoPaginaAnterior" class="botao-pagina" type="button">Anterior</button>
+        <div id="numerosPagina" class="numeros-pagina"></div>
+        <button id="botaoProximaPagina" class="botao-pagina" type="button">Próxima</button>
+      </div>
+    </section>
+
+    <!--
+      Seção 4: fechamento do conteúdo com benefícios diretos ao produtor rural.
+    -->
+    <section id="beneficios" class="secao-cartoes revelar">
+      <h2>Benefícios para o produtor</h2>
+      <div class="grade-cartoes">
+        <article class="cartao item-revelar">
+          <h3>Redução de custos</h3>
+          <p>Menor consumo de insumos e melhor aproveitamento do tempo da equipe.</p>
+        </article>
+        <article class="cartao item-revelar">
+          <h3>Sustentabilidade</h3>
+          <p>Aplicações mais conscientes ajudam a diminuir perdas e contaminações.</p>
+        </article>
+        <article class="cartao item-revelar">
+          <h3>Mais produtividade</h3>
+          <p>Com decisões rápidas e monitoramento frequente, a produção tende a crescer.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé com créditos do trabalho. -->
+  <footer class="revelar">
+    <p>© 2026 Projeto Agrinho • Davi Marques Padilha • Colégio Cívico-Militar Vale do Tigre</p>
+  </footer>
+
+  <!--
+    Botão fixo para retorno ao topo.
+    Fica oculto inicialmente e aparece após rolagem da página (controlado por JavaScript).
+  -->
+  <button id="botaoTopo" class="botao-topo" aria-label="Voltar ao topo">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
