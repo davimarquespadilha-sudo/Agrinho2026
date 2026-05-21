@@ -70,6 +70,9 @@ const itensGaleriaBase = [
   { file: "drone7.jpg", titulo: "Acompanhamento por talhão" },
   { file: "drone8.jpg", titulo: "Roteiros automatizados" },
   { file: "drone9.jpg", titulo: "Tecnologia aplicada no campo" },
+  { file: "drone10.jpg", titulo: "Tecnologia aplicada no campo" },
+  { file: "drone11.png", titulo: "Tecnologia aplicada no campo" },
+
 ];
 
 const itensPorPagina = 6;
